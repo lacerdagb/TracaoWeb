@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tração Web - Landing Pages que Geram Resultados para o seu Negócio</title>
+    <meta name="description" content="Criação de landing pages e sites de alta conversão para pequenos e médios empreendedores. Tenha um site rápido, moderno e sem mensalidades!">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(90deg, #4f46e5, #7c3aed);
+            --primary-color: #4f46e5;
+            --secondary-color: #1f2937; /* Grafite escuro */
+            --background-color: #ffffff;
+            --surface-color: #f9fafb; /* Cinza bem claro */
+            --heading-color: #111827;
+            --text-color: #4b5563;
+            --white-color: #ffffff;
+            --font-family: 'Poppins', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-family); line-height: 1.7; color: var(--text-color); background-color: var(--background-color); }
+        .container { max-width: 1100px; margin: auto; overflow: hidden; padding: 0 20px; }
+        section { padding: 80px 0; }
+
+        h1, h2, h3 { font-family: var(--font-family); color: var(--heading-color); font-weight: 700; }
+        h2 { font-size: 2.5rem; text-align: center; margin-bottom: 15px; }
+        h2 span { background: var(--primary-gradient); -webkit-background-clip: text; color: transparent; }
+        .section-subtitle { text-align: center; font-size: 1.1rem; color: #6b7280; max-width: 600px; margin: 0 auto 50px auto; }
+        
+        /* --- Header / Navegação --- */
+        .header { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); padding: 1rem 0; position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid #e5e7eb; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; }
+        .logo img { max-height: 50px; }
+        .nav-list { list-style: none; display: flex; }
+        .nav-list li { margin-left: 30px; }
+        .nav-list a { color: var(--secondary-color); text-decoration: none; font-weight: 600; transition: color 0.3s ease; }
+        .nav-list a:hover { color: var(--primary-color); }
+
+        /* --- Hero Section --- */
+        .hero { 
+            min-height: 90vh; 
+            display: flex; 
+            align-items: center; 
+            text-align: center;
+            /* SEU FUNDO PERSONALIZADO MANTIDO */
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/hero3.png') no-repeat center center/cover;
+            color: var(--white-color);
+        }
+        .hero-content { max-width: 800px; margin: 0 auto; }
+        .hero h1 { 
+            font-size: 3.5rem; 
+            line-height: 1.2; 
+            margin-bottom: 20px;
+            /* SUA COR DE TEXTO MANTIDA */
+            color: var(--white-color); 
+        }
+        .hero h1 span { 
+            /* SEU ESTILO DE TEXTO MANTIDO */
+            background: var(--primary-gradient); 
+            -webkit-background-clip: text; 
+            color: transparent;  
+        }
+        .hero p { 
+            font-size: 1.25rem; 
+            margin-bottom: 30px;
+            /* SUA COR DE TEXTO MANTIDA */
+            color: var(--white-color);
+        }
+        
+        /* --- Botão CTA --- */
+        .cta-button { display: inline-block; background: var(--primary-gradient); color: var(--white-color); padding: 16px 35px; text-decoration: none; font-weight: 600; font-size: 1.1rem; border-radius: 8px; border: none; cursor: pointer; text-align: center; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .cta-button:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 6px 20px rgba(79, 70, 229, 0.3); }
+
+        /* --- Seção de Benefícios --- */
+        #benefits { background-color: var(--surface-color); }
+        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .benefit-card { background: var(--white-color); padding: 30px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); text-align: center; }
+        .benefit-card .icon { font-size: 3rem; background: var(--primary-gradient); -webkit-background-clip: text; color: transparent; margin-bottom: 20px; }
+        .benefit-card h3 { font-size: 1.5rem; margin-bottom: 10px; }
+        
+        /* --- Seção Portfólio --- */
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .portfolio-card { background: var(--white-color); border-radius: 10px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.07); transition: transform 0.3s ease; }
+        .portfolio-card:hover { transform: translateY(-5px); }
+        .portfolio-card img { width: 100%; height: 220px; object-fit: cover; display: block; }
+        .portfolio-info { padding: 25px; }
+        .portfolio-info h3 { font-size: 1.4rem; margin-bottom: 10px; }
+        
+        /* --- Seção Como Funciona --- */
+        #process { background-color: var(--surface-color); }
+        .process-steps { display: flex; justify-content: space-between; gap: 30px; text-align: center; margin-top: 50px; }
+        .step { flex: 1; }
+        .step .icon { width: 80px; height: 80px; background: var(--primary-gradient); color: var(--white-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 20px auto; }
+        .step h3 { font-size: 1.5rem; margin-bottom: 10px; }
+        
+        /* --- Seção Depoimentos --- */
+        .testimonials-grid { 
+            display: grid; 
+            /* ALTERAÇÃO APLICADA AQUI */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 30px; 
+            margin: 0 auto;
+        }
+        .testimonial-card { background: var(--white-color); padding: 30px; border-radius: 10px; border: 1px solid #e5e7eb; display: flex; flex-direction: column; justify-content: space-between; }
+        .testimonial-card .stars { color: #f59e0b; margin-bottom: 15px; }
+        .testimonial-card p.quote { font-size: 1.1rem; font-style: italic; margin-bottom: 15px; }
+        .testimonial-card .author-info { font-weight: 600; }
+
+
+        /* --- CSS DA NOVA SEÇÃO DE INVESTIMENTO --- */
+        #investment { background-color: var(--surface-color); }
+        .investment-content { display: flex; align-items: flex-start; gap: 50px; }
+        .investment-column { flex: 1; }
+        .investment-list { list-style: none; margin-top: 20px; }
+        .investment-list li { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px; font-size: 1.1rem; }
+        .investment-list i { background: var(--primary-gradient); -webkit-background-clip: text; color: transparent; font-size: 1.5rem; margin-top: 5px; }
+        .why-us { background-color: var(--white-color); padding: 30px; border-radius: 10px; border: 1px solid #e5e7eb; }
+
+        /* --- Seção CTA Final --- */
+        #contact { background: var(--secondary-color); text-align: center; }
+        #contact h2, #contact p { color: var(--white-color); }
+        #contact p { color: #d1d5db; }
+        .cta-button.whatsapp i { margin-right: 10px; }
+        
+        /* --- Footer --- */
+        footer { text-align: center; padding: 30px 0; background-color: #111827; color: #9ca3af; }
+        
+        /* --- Responsividade --- */
+        @media (max-width: 768px) {
+            .nav-list { display: none; }
+            .hero h1 { font-size: 2.5rem; }
+            .process-steps { flex-direction: column; }
+            .investment-content { flex-direction: column; } /* Responsividade da nova seção */
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <nav class="container navbar">
+            <a href="#hero" class="logo">
+                <img src="img/logo.png" alt="Logo Tração Web">
+            </a>
+            <ul class="nav-list">
+                <li><a href="#benefits">Vantagens</a></li>
+                <li><a href="#portfolio">Projetos</a></li>
+                <li><a href="#process">Como Funciona</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="hero">
+            <div class="hero-content">
+                <h1>Sua empresa precisa de <span>mais</span> clientes?</h1>
+                <p>Nós criamos Landing Pages de alta performance que transformam visitantes em clientes, aumentando a tração do seu negócio no mundo digital.</p>
+                <a href="#contact" class="cta-button">QUERO UM ORÇAMENTO GRÁTIS</a>
+            </div>
+        </section>
+
+        <section id="benefits">
+            <div class="container">
+                <h2>Seu sucesso é nosso <span>objetivo</span></h2>
+                <p class="section-subtitle">Oferecemos a solução perfeita para empreendedores que buscam resultados sem complicação.</p>
+                <div class="benefits-grid">
+                    <div class="benefit-card"> <div class="icon"><i class="fa-solid fa-hand-holding-dollar"></i></div> <h3>Investimento Único</h3> <p>Pague apenas uma vez pelo desenvolvimento do seu site. Sem mensalidades ou taxas escondidas. Simples e transparente.</p> </div>
+                    <div class="benefit-card"> <div class="icon"><i class="fa-solid fa-rocket"></i></div> <h3>Entrega Rápida</h3> <p>Sabemos que seu tempo é valioso. Entregamos sua landing page profissional e pronta para vender em poucos dias.</p> </div>
+                    <div class="benefit-card"> <div class="icon"><i class="fa-solid fa-mobile-screen-button"></i></div> <h3>Design Moderno e Responsivo</h3> <p>Criamos sites com as melhores tecnologias, garantindo uma experiência perfeita no celular e no computador.</p> </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio">
+            <div class="container">
+                <h2>Projetos que geram <span>tração</span></h2>
+                <p class="section-subtitle">Confira alguns sites que desenvolvemos para negócios locais como o seu.</p>
+                <div class="portfolio-grid">
+                    <div class="portfolio-card">
+                        <img src="https://via.placeholder.com/400x220.png?text=Oficina+do+Diguinho" alt="Projeto Oficina do Diguinho">
+                        <div class="portfolio-info">
+                            <h3>Oficina do Diguinho</h3>
+                            <p>Landing page para oficina de motos, focada em serviços e credibilidade local.</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-card">
+                        <img src="https://via.placeholder.com/400x220.png?text=Lucas+GNV" alt="Projeto Lucas GNV">
+                        <div class="portfolio-info">
+                            <h3>Lucas GNV</h3>
+                            <p>Página de vendas para conversora de GNV, destacando economia e segurança.</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-card">
+                        <img src="https://via.placeholder.com/400x220.png?text=Seu+Próximo+Projeto" alt="Seu Próximo Projeto">
+                        <div class="portfolio-info">
+                            <h3>[Nome do Seu Próximo Cliente]</h3>
+                            <p>O próximo case de sucesso pode ser o seu negócio. Vamos conversar?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="process">
+            <div class="container">
+                <h2>Seu site no ar em <span>4 passos</span></h2>
+                <p class="section-subtitle">Nosso processo é simples, rápido e transparente do início ao fim.</p>
+                <div class="process-steps">
+                    <div class="step"> <div class="icon">1</div> <h3>Briefing</h3> <p>Conversamos para entender seu negócio, seu público e seus objetivos.</p> </div>
+                    <div class="step"> <div class="icon">2</div> <h3>Criação</h3> <p>Desenvolvemos o design e a estrutura da sua landing page com foco em resultados.</p> </div>
+                    <div class="step"> <div class="icon">3</div> <h3>Revisão</h3> <p>Você revisa todo o material e solicita os ajustes necessários para ficar perfeito.</p> </div>
+                    <div class="step"> <div class="icon">4</div> <h3>Lançamento</h3> <p>Com tudo aprovado, colocamos seu novo site no ar, pronto para atrair clientes.</p> </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials">
+            <div class="container">
+                <h2>O que nossos <span>parceiros</span> dizem</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p class="quote">"O site ficou incrível e profissional. Na primeira semana já recebi 3 orçamentos pelo WhatsApp de clientes que me encontraram no Google. O investimento se pagou muito rápido!"</p>
+                        <div class="author-info">- Dono da Oficina do Diguinho</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p class="quote">"Eu não entendia nada de site, e o processo foi muito fácil. A página ficou pronta em poucos dias e passou a credibilidade que minha empresa precisava. Recomendo!"</p>
+                        <div class="author-info">- Proprietário da Lucas GNV</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p class="quote">"Eu só tinha um Instagram e não conseguia passar uma imagem profissional. A Tração Web criou uma landing page linda que virou minha vitrine virtual. As vendas aumentaram!"</p>
+                        <div class="author-info">- Ana, Dona de uma Loja de Roupas</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="investment">
+            <div class="container">
+                <h2>Um site não é custo, é <span>investimento</span></h2>
+                <p class="section-subtitle">Veja como uma landing page profissional se torna o melhor funcionário da sua empresa.</p>
+                <div class="investment-content">
+                    <div class="investment-column why-site">
+                        <h3>O que um site faz por você:</h3>
+                        <ul class="investment-list">
+                            <li><i class="fa-solid fa-shield-halved"></i> <div><strong>Aumenta sua Credibilidade</strong><p>Um site profissional mostra que seu negócio é sério e confiável.</p></div></li>
+                            <li><i class="fa-solid fa-clock"></i> <div><strong>Fica Visível 24/7</strong><p>Seu negócio pode ser encontrado por novos clientes a qualquer hora do dia.</p></div></li>
+                            <li><i class="fa-solid fa-bullseye"></i> <div><strong>Atrai os Clientes Certos</strong><p>Otimizado para buscas, seu site atrai pessoas que já estão procurando pelo seu serviço.</p></div></li>
+                            <li><i class="fa-solid fa-trophy"></i> <div><strong>Coloca você à frente</strong><p>Enquanto seus concorrentes usam apenas redes sociais, você tem um canal de vendas profissional.</p></div></li>
+                        </ul>
+                    </div>
+                    <div class="investment-column why-us">
+                        <h3>Por que escolher a Tração Web?</h3>
+                        <p>Nós entendemos a realidade do pequeno empreendedor. Por isso, nosso foco é entregar a melhor solução, com a melhor condição:</p>
+                        <ul class="investment-list">
+                            <li><i class="fa-solid fa-rocket"></i> <div><strong>Entrega Rápida</strong><p>Seu site no ar em tempo recorde.</p></div></li>
+                            <li><i class="fa-solid fa-wallet"></i> <div><strong>Investimento Único</strong><p>Sem mensalidades ou taxas surpresa.</p></div></li>
+                            <li><i class="fa-solid fa-lightbulb"></i> <div><strong>Foco em Resultados</strong><p>Criamos cada detalhe pensando em gerar contatos e vendas para você.</p></div></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <h2>QUEM SOU EU?</h2>
+        <section id="contact">
+            <div class="container">
+                <h2>Vamos dar <span>tração</span> ao seu negócio?</h2>
+                <p class="section-subtitle">Chega de perder clientes para a concorrência. Fale comigo agora pelo WhatsApp e receba uma proposta sem compromisso.</p>
+                <a href="https://wa.me/[SEUNUMERODOWHATSAPP]?text=Olá!%20Vi%20o%20site%20da%20Tração%20Web%20e%20gostaria%20de%20um%20orçamento." target="_blank" class="cta-button whatsapp">
+                    <i class="fab fa-whatsapp"></i> SOLICITAR ORÇAMENTO</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Tração Web - Todos os direitos reservados - Desenvolvido por [Gabriel Lacerda 💻🌐]</p>
+        </div>
+    </footer>
+
+</body>
+</html>
