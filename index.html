@@ -12,6 +12,8 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+
     <style>
         :root {
             --primary-gradient: linear-gradient(90deg, #4f46e5, #7c3aed);
@@ -37,9 +39,9 @@
         .section-subtitle { text-align: center; font-size: 1.1rem; color: #6b7280; max-width: 600px; margin: 0 auto 50px auto; }
         
         /* --- Header / Navegação --- */
-        .header { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); padding: 1rem 0; position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid #e5e7eb; }
+        .header { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid #e5e7eb; }
         .navbar { display: flex; justify-content: space-between; align-items: center; }
-        .logo img { max-height: 50px; }
+        .logo img { max-height: 90px; }
         .nav-list { list-style: none; display: flex; }
         .nav-list li { margin-left: 30px; }
         .nav-list a { color: var(--secondary-color); text-decoration: none; font-weight: 600; transition: color 0.3s ease; }
@@ -52,7 +54,7 @@
             align-items: center; 
             text-align: center;
             /* SEU FUNDO PERSONALIZADO MANTIDO */
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/hero3.png') no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/fundo2.png') no-repeat center center/cover;
             color: var(--white-color);
         }
         .hero-content { max-width: 800px; margin: 0 auto; }
@@ -132,7 +134,10 @@
         .cta-button.whatsapp i { margin-right: 10px; }
         
         /* --- Footer --- */
-        footer { text-align: center; padding: 30px 0; background-color: #111827; color: #9ca3af; }
+        footer { text-align: center; padding: 20px 0; background-color: #111827; color: #9ca3af; }
+        .footer-socials a { color: #fff; font-size: 1.8rem; margin: 0 10px; text-decoration: none; transition: color 0.3s ease; }
+        .footer-socials a:hover { color: var(--primary-color); }
+        .footerp > a {font-size: 1em; text-decoration: underline;}
         
         /* --- Responsividade --- */
         @media (max-width: 768px) {
@@ -140,6 +145,7 @@
             .hero h1 { font-size: 2.5rem; }
             .process-steps { flex-direction: column; }
             .investment-content { flex-direction: column; } /* Responsividade da nova seção */
+            .navbar {display: flex; justify-content: center; align-items: center;}
         }
     </style>
 </head>
@@ -186,24 +192,24 @@
                 <p class="section-subtitle">Confira alguns sites que desenvolvemos para negócios locais como o seu.</p>
                 <div class="portfolio-grid">
                     <div class="portfolio-card">
-                        <img src="https://via.placeholder.com/400x220.png?text=Oficina+do+Diguinho" alt="Projeto Oficina do Diguinho">
+                       <a href="https://lacerdagb.github.io/OficinaDoDiguinhov2/" target="_blank"><img src="img/oficinadodiguinho.png" alt="Projeto Oficina do Diguinho"></a> 
                         <div class="portfolio-info">
                             <h3>Oficina do Diguinho</h3>
                             <p>Landing page para oficina de motos, focada em serviços e credibilidade local.</p>
                         </div>
                     </div>
                     <div class="portfolio-card">
-                        <img src="https://via.placeholder.com/400x220.png?text=Lucas+GNV" alt="Projeto Lucas GNV">
+                        <a href="https://lacerdagb.github.io/LucasGNV/" target="_blank"><img src="img/lucasgnv.png" alt="Projeto Lucas GNV"></a>
                         <div class="portfolio-info">
                             <h3>Lucas GNV</h3>
                             <p>Página de vendas para conversora de GNV, destacando economia e segurança.</p>
                         </div>
                     </div>
                     <div class="portfolio-card">
-                        <img src="https://via.placeholder.com/400x220.png?text=Seu+Próximo+Projeto" alt="Seu Próximo Projeto">
+                       <a href="https://lacerdagb.github.io/BrothersTintas/" target="_blank"><img src="img/brothertintas.png" alt="brotherstintas"></a> 
                         <div class="portfolio-info">
-                            <h3>[Nome do Seu Próximo Cliente]</h3>
-                            <p>O próximo case de sucesso pode ser o seu negócio. Vamos conversar?</p>
+                            <h3>Brothers Tintas</h3>
+                            <p>Página para captar clientes na venda de materiais de pintura</p>
                         </div>
                     </div>
                 </div>
@@ -239,8 +245,8 @@
                     </div>
                     <div class="testimonial-card">
                         <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                        <p class="quote">"Eu só tinha um Instagram e não conseguia passar uma imagem profissional. A Tração Web criou uma landing page linda que virou minha vitrine virtual. As vendas aumentaram!"</p>
-                        <div class="author-info">- Ana, Dona de uma Loja de Roupas</div>
+                        <p class="quote">"Desde que o site foi pro ar, o movimento de clientes que nos acham no Google aumentou demais. Foi o melhor investimento que fizemos para atrair mais gente!"</p>
+                        <div class="author-info">- Diretor do Brothers Tintas </div>
                     </div>
                 </div>
             </div>
@@ -272,7 +278,6 @@
                 </div>
             </div>
         </section>
-        <h2>QUEM SOU EU?</h2>
         <section id="contact">
             <div class="container">
                 <h2>Vamos dar <span>tração</span> ao seu negócio?</h2>
@@ -284,9 +289,17 @@
     </main>
 
     <footer>
+
         <div class="container">
-            <p>© 2025 Tração Web - Todos os direitos reservados - Desenvolvido por [Gabriel Lacerda 💻🌐]</p>
+             <div class="footer-socials">
+                <a href="https://www.instagram.com/tracaoweb/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+             <div class="container">
+            <p>© 2025 Tração Web - Todos os direitos reservados - <a href="https://www.linkedin.com/in/gabriel-lacerda03/" target="_blank"> <p class="footerp">Desenvolvido por Gabriel Lacerda 💻🌐</p></a></p>
         </div>
+
+            </div>
+        </div>
+    </footer>
     </footer>
 
 </body>
