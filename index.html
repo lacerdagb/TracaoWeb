@@ -11,8 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 
     <style>
         :root {
@@ -25,6 +24,12 @@
             --text-color: #4b5563;
             --white-color: #ffffff;
             --font-family: 'Poppins', sans-serif;
+
+            /* NOVAS CORES DOS NICHOS */
+            --accent-barber: #ea580c; /* Laranja */
+            --accent-pet: #f59e0b;    /* Amarelo */
+            --accent-food: #ef4444;   /* Vermelho */
+            --accent-health: #0ea5e9; /* Azul */
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -39,7 +44,7 @@
         .section-subtitle { text-align: center; font-size: 1.1rem; color: #6b7280; max-width: 600px; margin: 0 auto 50px auto; }
         
         /* --- Header / Navegação --- */
-        .header { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid #e5e7eb; }
+        .header { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid #e5e7eb; }
         .navbar { display: flex; justify-content: space-between; align-items: center; }
         .logo img { max-height: 90px; }
         .nav-list { list-style: none; display: flex; }
@@ -53,7 +58,6 @@
             display: flex; 
             align-items: center; 
             text-align: center;
-            /* SEU FUNDO PERSONALIZADO MANTIDO */
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/fundo2.png') no-repeat center center/cover;
             color: var(--white-color);
         }
@@ -62,11 +66,9 @@
             font-size: 3.5rem; 
             line-height: 1.2; 
             margin-bottom: 20px;
-            /* SUA COR DE TEXTO MANTIDA */
             color: var(--white-color); 
         }
         .hero h1 span { 
-            /* SEU ESTILO DE TEXTO MANTIDO */
             background: var(--primary-gradient); 
             -webkit-background-clip: text; 
             color: transparent;  
@@ -74,7 +76,6 @@
         .hero p { 
             font-size: 1.25rem; 
             margin-bottom: 30px;
-            /* SUA COR DE TEXTO MANTIDA */
             color: var(--white-color);
         }
         
@@ -89,13 +90,88 @@
         .benefit-card .icon { font-size: 3rem; background: var(--primary-gradient); -webkit-background-clip: text; color: transparent; margin-bottom: 20px; }
         .benefit-card h3 { font-size: 1.5rem; margin-bottom: 10px; }
         
-        /* --- Seção Portfólio --- */
+        /* --- Seção Portfólio (CLIENTES REAIS) --- */
         .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         .portfolio-card { background: var(--white-color); border-radius: 10px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.07); transition: transform 0.3s ease; }
         .portfolio-card:hover { transform: translateY(-5px); }
         .portfolio-card img { width: 100%; height: 220px; object-fit: cover; display: block; }
         .portfolio-info { padding: 25px; }
         .portfolio-info h3 { font-size: 1.4rem; margin-bottom: 10px; }
+
+        /* --- NOVA ÁREA: MODELOS POR NICHO (ESTILOS ADICIONADOS) --- */
+        .niche-section { border-top: 1px solid #e5e7eb; padding-top: 60px; padding-bottom: 60px; }
+        .bg-gray { background-color: var(--surface-color); }
+        
+        .niche-header { text-align: center; margin-bottom: 40px; }
+        .niche-header h3 { font-size: 2rem; display: flex; align-items: center; justify-content: center; gap: 10px; color: var(--heading-color); }
+        
+        .models-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 30px; 
+            margin-bottom: 30px;
+        }
+
+        .model-card {
+            background: var(--white-color);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        .model-card:hover { transform: translateY(-5px); border-color: var(--primary-color); }
+
+        /* QUADRADO BRANCO PARA O PRINT */
+        .mockup-placeholder {
+            width: 100%;
+            height: 250px; /* Altura padrão para o print */
+            background-color: #f3f4f6; /* Cinza claro para destacar quando sem foto */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .mockup-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            display: block;
+        }
+        .placeholder-text { color: #9ca3af; text-align: center; }
+        .placeholder-text i { font-size: 3rem; margin-bottom: 10px; display: block; }
+
+        .model-footer { padding: 15px; text-align: center; border-top: 1px solid #f3f4f6; }
+        .model-footer h4 { font-size: 1.1rem; color: var(--text-color); }
+        
+        .btn-niche {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 12px 20px;
+            border: 2px solid;
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+        /* Cores especificas dos botões de nicho */
+        .btn-barber { color: var(--accent-barber); border-color: var(--accent-barber); }
+        .btn-barber:hover { background: var(--accent-barber); color: #fff; }
+        
+        .btn-pet { color: var(--accent-pet); border-color: var(--accent-pet); }
+        .btn-pet:hover { background: var(--accent-pet); color: #fff; }
+
+        .btn-food { color: var(--accent-food); border-color: var(--accent-food); }
+        .btn-food:hover { background: var(--accent-food); color: #fff; }
+
+        .btn-health { color: var(--accent-health); border-color: var(--accent-health); }
+        .btn-health:hover { background: var(--accent-health); color: #fff; }
         
         /* --- Seção Como Funciona --- */
         #process { background-color: var(--surface-color); }
@@ -107,7 +183,6 @@
         /* --- Seção Depoimentos --- */
         .testimonials-grid { 
             display: grid; 
-            /* ALTERAÇÃO APLICADA AQUI */
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
             gap: 30px; 
             margin: 0 auto;
@@ -117,15 +192,14 @@
         .testimonial-card p.quote { font-size: 1.1rem; font-style: italic; margin-bottom: 15px; }
         .testimonial-card .author-info { font-weight: 600; }
 
-
         /* --- CSS DA NOVA SEÇÃO DE INVESTIMENTO --- */
-        #investment { background-color: var(--surface-color); }
+        #investment { background-color: var(--white-color); } /* Alterado para branco pois o anterior era surface */
         .investment-content { display: flex; align-items: flex-start; gap: 50px; }
         .investment-column { flex: 1; }
         .investment-list { list-style: none; margin-top: 20px; }
         .investment-list li { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px; font-size: 1.1rem; }
         .investment-list i { background: var(--primary-gradient); -webkit-background-clip: text; color: transparent; font-size: 1.5rem; margin-top: 5px; }
-        .why-us { background-color: var(--white-color); padding: 30px; border-radius: 10px; border: 1px solid #e5e7eb; }
+        .why-us { background-color: var(--surface-color); padding: 30px; border-radius: 10px; border: 1px solid #e5e7eb; }
 
         /* --- Seção CTA Final --- */
         #contact { background: var(--secondary-color); text-align: center; }
@@ -135,17 +209,20 @@
         
         /* --- Footer --- */
         footer { text-align: center; padding: 20px 0; background-color: #111827; color: #9ca3af; }
+        .footer-socials { margin-bottom: 10px; }
         .footer-socials a { color: #fff; font-size: 1.8rem; margin: 0 10px; text-decoration: none; transition: color 0.3s ease; }
         .footer-socials a:hover { color: var(--primary-color); }
-        .footerp > a {font-size: 1em; text-decoration: underline;}
+        .footerp { font-size: 0.9em; text-decoration: none; color: #9ca3af; margin-top: 5px; display: inline-block;}
+        .footerp:hover { text-decoration: underline; color: var(--white-color); }
         
         /* --- Responsividade --- */
         @media (max-width: 768px) {
             .nav-list { display: none; }
             .hero h1 { font-size: 2.5rem; }
             .process-steps { flex-direction: column; }
-            .investment-content { flex-direction: column; } /* Responsividade da nova seção */
+            .investment-content { flex-direction: column; }
             .navbar {display: flex; justify-content: center; align-items: center;}
+            .niche-header h3 { flex-direction: column; }
         }
     </style>
 </head>
@@ -159,7 +236,7 @@
             <ul class="nav-list">
                 <li><a href="#benefits">Vantagens</a></li>
                 <li><a href="#portfolio">Projetos</a></li>
-                <li><a href="#process">Como Funciona</a></li>
+                <li><a href="#modelos">Modelos</a></li> <li><a href="#process">Como Funciona</a></li>
                 <li><a href="#contact">Contato</a></li>
             </ul>
         </nav>
@@ -216,6 +293,152 @@
             </div>
         </section>
 
+        <div id="modelos"> <div class="container" style="text-align: center; padding-top: 60px;">
+                 <h2>Escolha seu <span>Modelo Ideal</span></h2>
+                 <p class="section-subtitle">Não sabe por onde começar? Veja nossos modelos pré-desenvolvidos para o seu nicho.</p>
+            </div>
+
+            <section class="niche-section bg-gray">
+                <div class="container">
+                    <div class="niche-header">
+                        <h3 style="color: var(--accent-barber)"><i class="fa-solid fa-scissors"></i> Barbearias & Salões</h3>
+                    </div>
+                    <div class="models-grid">
+                        <div class="model-card">
+                            <div class="mockup-placeholder">
+                                <a href="https://lacerdagb.github.io/salao1/" target="_blank">
+                                <div class="placeholder-text"> <img src="img/Barber Club.png" alt="barbeiro"></i></div>
+                            </div>
+                            <div class="model-footer"><h4>Estilo Dark Moderno</h4></div>
+                            </a>
+                        </div>
+                        <div class="model-card">
+                            <div class="mockup-placeholder">
+                                <a href="https://lacerdagb.github.io/salao2/" target="_blank">
+                                <div class="placeholder-text"> <img src="img/Beauty Salon.png" alt="salao de beleza"></div>
+                            </div>
+                            <div class="model-footer"><h4>Estilo Clean/Clássico</h4></div>
+                            </a>
+                        </div>
+                        <div class="model-card">
+                            <div class="mockup-placeholder">
+                                <a href="https://lacerdagb.github.io/salao3/" target="_blank">
+                                <div class="placeholder-text"><img src="img/muse.png" alt="salao muse"></div>
+                            </div>
+                            <div class="model-footer"><h4>Estilo Urbano/Jovem</h4></div>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/5521974477338?text=Gostei%20dos%20modelos%20de%20Barbearia" class="btn-niche btn-barber" target="_blank">QUERO UM SITE ASSIM</a>
+                </div>
+            </section>
+
+            <section class="niche-section">
+                <div class="container">
+                    <div class="niche-header">
+                        <h3 style="color: var(--accent-pet)"><i class="fa-solid fa-paw"></i> Pet Shop & Veterinária</h3>
+                    </div>
+                    <div class="models-grid">
+                        <div class="model-card">
+                            <div class="mockup-placeholder">
+                                <a href="https://lacerdagb.github.io/petshop3/" target="_blank">
+                                <div class="placeholder-text"><img src="img/arenapet.png" alt="arena pet"></span></div>
+                            </div>
+                            <div class="model-footer"><h4>Foco em Petshop Completo</h4></div>
+                            </a>
+                        </div>
+                        <div class="model-card">
+                            <div class="mockup-placeholder">
+                                <a href="https://lacerdagb.github.io/petshop1/" target="_blank">
+                                <div class="placeholder-text"><img src="img/petshopmodelo.png" alt="petshop"></span></div>
+                            </div>
+                            <div class="model-footer"><h4>Foco em Clínica Veterinária</h4></div>
+                            </a>
+                        </div>
+                        <div class="model-card">
+                            <div class="mockup-placeholder">
+                                <a href="https://lacerdagb.github.io/petshop2/" target="_blank">
+                                <div class="placeholder-text"><img src="img/boutique.png" alt="banho no cachorro"></span></div>
+                            </div>
+                            <div class="model-footer"><h4>Foco em Estética Animal</h4></div>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/5521974477338?text=Gostei%20dos%20modelos%20de%20Petshop" class="btn-niche btn-pet" target="_blank">QUERO UM SITE ASSIM</a>
+                </div>
+            </section>
+
+            <section class="niche-section bg-gray">
+                <div class="container">
+                    <div class="niche-header">
+                        <h3 style="color: var(--accent-food)"><i class="fa-solid fa-utensils"></i> Gastronomia & Delivery</h3>
+                    </div>
+                    <div class="models-grid">
+                        <div class="model-card">
+                            <div class="mockup-placeholder">
+                                <a href="https://lacerdagb.github.io/restaurante3/" target="_blank">
+                                <div class="placeholder-text"><img src="img/pizzaria.png" alt="pizzaria"></span></div>
+                            </div>
+                            <div class="model-footer"><h4>Pizzaria</h4></div>
+                            </a>
+                        </div>
+                        <div class="model-card">
+                            <div class="mockup-placeholder">
+                                <a href="https://lacerdagb.github.io/restaurante1/" target="_blank">
+                                <div class="placeholder-text"><img src="img/seucafe.png" alt="cafeteria"> </span></div>
+                            </div>
+                            <div class="model-footer"><h4>Cafeteria</h4></div>
+                            </a>
+                        </div>
+                        <div class="model-card">
+                            <div class="mockup-placeholder">
+                                <a href="https://lacerdagb.github.io/restaurante2/" target="_blank">
+                                <div class="placeholder-text"><img src="img/confeiteria.png" alt="Casa do bolo"> </span></div>
+                            </div>
+                            <div class="model-footer"><h4>Casa do Bolo</h4></div>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/5521974477338?text=Gostei%20dos%20modelos%20de%20Restaurante" class="btn-niche btn-food" target="_blank">QUERO UM SITE ASSIM</a>
+                </div>
+            </section>
+
+             <section class="niche-section">
+                <div class="container">
+                    <div class="niche-header">
+                        <h3 style="color: var(--accent-health)"><i class="fa-solid fa-heart-pulse"></i> Clínicas & Saúde</h3>
+                    </div>
+                    <div class="models-grid">
+                        <div class="model-card">
+                            <a href="https://lacerdagb.github.io/clinica2/" target="_blank">
+                            <div class="mockup-placeholder">
+                                <div class="placeholder-text"><img src="img/fisio.png" alt="fisioterapia"> </span></div>
+                            </div>
+                            <div class="model-footer"><h4>Fisioterapia</h4></div>
+                            </a>
+                        </div>
+                        <div class="model-card">
+                            <div class="mockup-placeholder">
+                                <a href="https://lacerdagb.github.io/clinica3/" target="_blank">
+                                <div class="placeholder-text"><img src="img/dentista.png" alt="dentista"> </span></div>
+                            </div>
+                            <div class="model-footer"><h4>Dentista</h4></div>
+                            </a>
+                        </div>
+                        <div class="model-card">
+                            <a href="https://lacerdagb.github.io/clinica1/" target="_blank"> 
+                            <div class="mockup-placeholder"> 
+                                <div  class="placeholder-text"><img src="img/vitalis.png" alt="consultório"></div>
+                            </div>
+                            <div class="model-footer"><h4> </a>Clínica de Saúde</h4></div>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/5521974477338?text=Gostei%20dos%20modelos%20de%20Saude" class="btn-niche btn-health" target="_blank">QUERO UM SITE ASSIM</a>
+                </div>
+            </section>
+
+        </div>
         <section id="process">
             <div class="container">
                 <h2>Seu site no ar em <span>4 passos</span></h2>
@@ -225,29 +448,6 @@
                     <div class="step"> <div class="icon">2</div> <h3>Criação</h3> <p>Desenvolvemos o design e a estrutura da sua landing page com foco em resultados.</p> </div>
                     <div class="step"> <div class="icon">3</div> <h3>Revisão</h3> <p>Você revisa todo o material e solicita os ajustes necessários para ficar perfeito.</p> </div>
                     <div class="step"> <div class="icon">4</div> <h3>Lançamento</h3> <p>Com tudo aprovado, colocamos seu novo site no ar, pronto para atrair clientes.</p> </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="testimonials">
-            <div class="container">
-                <h2>O que nossos <span>parceiros</span> dizem</h2>
-                <div class="testimonials-grid">
-                    <div class="testimonial-card">
-                        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                        <p class="quote">"O site ficou incrível e profissional. Na primeira semana já recebi 3 orçamentos pelo WhatsApp de clientes que me encontraram no Google. O investimento se pagou muito rápido!"</p>
-                        <div class="author-info">- Dono da Oficina do Diguinho</div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                        <p class="quote">"Eu não entendia nada de site, e o processo foi muito fácil. A página ficou pronta em poucos dias e passou a credibilidade que minha empresa precisava. Recomendo!"</p>
-                        <div class="author-info">- Proprietário da Lucas GNV</div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                        <p class="quote">"Desde que o site foi pro ar, o movimento de clientes que nos acham no Google aumentou demais. Foi o melhor investimento que fizemos para atrair mais gente!"</p>
-                        <div class="author-info">- Diretor do Brothers Tintas </div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -289,17 +489,13 @@
     </main>
 
     <footer>
-
         <div class="container">
              <div class="footer-socials">
                 <a href="https://www.instagram.com/tracaoweb/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-             <div class="container">
-            <p>© 2025 Tração Web - Todos os direitos reservados - <a href="https://www.linkedin.com/in/gabriel-lacerda03/" target="_blank"> <p class="footerp">Desenvolvido por Gabriel Lacerda 💻🌐</p></a></p>
+             </div>
+             <p>© 2025 Tração Web - Todos os direitos reservados</p>
+             <a href="https://www.linkedin.com/in/gabriel-lacerda03/" target="_blank" class="footerp">Desenvolvido por Gabriel Lacerda 💻🌐</a>
         </div>
-
-            </div>
-        </div>
-    </footer>
     </footer>
 
 </body>
